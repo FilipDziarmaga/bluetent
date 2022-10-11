@@ -97,9 +97,9 @@ describe("Story Two", () => {
 
             for (let i = 0; i < randomInterval; i++) {
                 cy.wrap($element).click({ force: true })
-                cy.log("Klik")
+                
                 bedrooms = bedrooms + 1,
-                    cy.wait(750),
+                    cy.wait(1000),
                     cy.get("[id*='bt-range-value--Minimum Bedrooms']").should('have.text', String(bedrooms))
             }
 
@@ -112,7 +112,7 @@ describe("Story Two", () => {
                 cy.wrap($element2).click({ force: true })
 
                 bathrooms = bathrooms + 1,
-                    cy.wait(750),
+                    cy.wait(1000),
                     cy.get("[id*='bt-range-value--Minimum Bathrooms']").should('have.text', String(bathrooms))
 
             }

@@ -136,7 +136,7 @@ describe("Story Two", () => {
             cy.log($element.text().substring($element.text().indexOf("Beds: ") + 6, $element.text().indexOf("Beds: ") + 7));
             cy.log($element.text().substring($element.text().indexOf("Baths: ") + 7, $element.text().indexOf("Baths: ") + 8));
 
-            assert.isAtLeast(parseFloat(minBedrooms), parseFloat(randomInterval))
+            assert.isAtLeast(parseFloat(minBedrooms), parseFloat(randomInterval-1))
 
             assert.isAtLeast(parseFloat(minBathrooms), parseFloat(randomInterval - 1))
 

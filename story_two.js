@@ -130,15 +130,14 @@ describe("Story Two", () => {
         cy.wait(1000)
         cy.get('.bt-teaser__info').each(($element, index, $list) => {
 
-            let minBedrooms = $element.text().substring($element.text().indexOf("Beds: ") + 6, $element.text().indexOf("Beds: ") + 7)
+            let minBedrooms = $element.text().substring($element.text().indexOf("Beds: ") + 6, $element.text().indexOf("Beds: ") + 8)
 
-            let minBathrooms = $element.text().substring($element.text().indexOf("Baths: ") + 7, $element.text().indexOf("Baths: ") + 8)
-            cy.log($element.text().substring($element.text().indexOf("Beds: ") + 6, $element.text().indexOf("Beds: ") + 7));
-            cy.log($element.text().substring($element.text().indexOf("Baths: ") + 7, $element.text().indexOf("Baths: ") + 8));
+            let minBathrooms = $element.text().substring($element.text().indexOf("Baths: ") + 7, $element.text().indexOf("Baths: ") + 9)
+           
 
-            assert.isAtLeast(parseFloat(minBedrooms), parseFloat(randomInterval-1))
+            assert.isAtLeast(Math.ceil(parseFloat(minBedrooms)), Math.ceil(parseFloat(randomInterval)))
 
-            assert.isAtLeast(parseFloat(minBathrooms), parseFloat(randomInterval - 1))
+            assert.isAtLeast(Math.ceil(parseFloat(minBathrooms)), Math.ceil(parseFloat(randomInterval-1)))
 
         })
     })
